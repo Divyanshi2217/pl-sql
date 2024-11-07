@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reg.css') }}">
+
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+</head>
+<body>
+    <div class="container">
+
+        <!-- <button type="button" href="/listevents.html">View Events</button> -->
+        <a href="/registrations" class="view-list-button">View Registrations</a>
+
+        <h1>Register for the Event</h1>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div> 
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="event_date">Event Date:</label>
+                <input type="date" id="event_date" name="event_date" required>
+            </div>
+            <div class="form-group">
+                <label for="event">Select Event:</label>
+                <select id="event" name="event" required>
+                    <option value="tech-talk">Tech Talk</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="networking">Networking Event</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="time">Event Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Event Location:</label>
+                <select id="location" name="location" required>
+                    <option value="">Select location</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Bareilly">Bareilly</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Varanasi">Varanasi</option>
+                </select>              
+            </div>
+            <input type="submit" value="Register">
+        </form>
+        <div class="footer">
+            <p>We look forward to seeing you!</p>
+        </div>
+    </div>
+</body>
+</html>

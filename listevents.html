@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Event Registrations</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Registrations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Created Date</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                {% for registration in registrations %}
+                    <tr>
+                        <!-- <td>{{ registration.event_id }}</td> -->
+                        <td>{{ registration.name }}</td>
+                        <td>{{ registration.email }}</td>
+                        <td>{{ registration.event_date }}</td>
+                        <td>{{ registration.eventtime }}</td>
+                        <td>{{ registration.event_location }}</td>
+                        <td>{{ registration.created_date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/">Back to Registration</a>
+    </div>
+</body>
+</html>
